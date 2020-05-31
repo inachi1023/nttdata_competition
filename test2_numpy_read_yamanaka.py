@@ -19,7 +19,8 @@ def read_light_diff(image_before, image_after, light_diff):
     sum_after = gray_after.sum(dtype=int)  # 変化後
 
     # 差分を計算
-    difference_sum_gray = sum_after - sum_before
+    difference_sum_gray = sum_after - sum_before + 3000000
+    print(difference_sum_gray)
 
     # 夜間照明の差を設定
     light_diff.append(difference_sum_gray)
@@ -40,11 +41,12 @@ def read_economy_diff(value1, value2, economy_diff):
 x = []  # プロット_x軸
 y = []  # プロット_y軸
 
-years = range(1992, 2013 - 1)  # 1992年から2013年まで
+years = range(1992, 2013)  # 1992年から2013年まで
 
 for year in years:
     before_year = str(year)
     after_year = str(year + 1)
+    print(before_year)
 
     # 写真(夜間光)を設定
     night_img_before = 'night_image/' + before_year + '.jpg'
@@ -68,4 +70,4 @@ plt.ylabel("Economic impact ")
 
 # 値をプロットする
 plt.scatter(x, y)
-plt.savefig("plot_result_new.png")
+plt.savefig("plot_result_yamanaka.png")
