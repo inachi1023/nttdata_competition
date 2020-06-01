@@ -67,4 +67,4 @@ plt.ylabel("Economic impact ")
 
 # 値をプロットする
 plt.scatter(x, y)
-plt.savefig("plot_result_yamanaka2.png")
+plt.savefig("result_actual_plot.png")
